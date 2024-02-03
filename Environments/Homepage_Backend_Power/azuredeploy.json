@@ -78,7 +78,7 @@
       "type": "Microsoft.OperationalInsights/workspaces",
       "apiVersion": "2021-06-01",
       "name": "[parameters('containerAppLogAnalyticsName')]",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "properties": {
         "sku": {
           "name": "PerGB2018"
@@ -89,7 +89,7 @@
       "type": "Microsoft.App/managedEnvironments",
       "apiVersion": "2022-06-01-preview",
       "name": "[parameters('containerAppEnvName')]",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "sku": {
         "name": "Consumption"
       },
@@ -110,7 +110,7 @@
       "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
       "apiVersion": "2022-01-31-preview",
       "name": "[format('id-{0}', parameters('containerAppName'))]",
-      "location": "[resourceGroup().location]"
+      "location": "[parameters('location')]"
     },
     {
       "type": "Microsoft.Authorization/roleAssignments",
@@ -132,7 +132,7 @@
       "type": "Microsoft.App/containerApps",
       "apiVersion": "2022-06-01-preview",
       "name": "[parameters('containerAppName')]",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "identity": {
         "type": "UserAssigned",
         "userAssignedIdentities": {
@@ -206,7 +206,7 @@
         "mode": "Incremental",
         "parameters": {
           "location": {
-            "value": "[resourceGroup().location]"
+            "value": "[parameters('location')]"
           },
           "containerRegistryName": {
             "value": "[parameters('containerRegistryName')]"
@@ -238,7 +238,7 @@
               "type": "Microsoft.ContainerRegistry/registries",
               "apiVersion": "2022-02-01-preview",
               "name": "[parameters('containerRegistryName')]",
-              "location": "[resourceGroup().location]",
+              "location": "[parameters('location')]",
               "sku": {
                 "name": "Standard"
               },
@@ -278,7 +278,7 @@
             "value": "[reference(resourceId('Microsoft.Resources/deployments', 'acr')).outputs.name.value]"
           },
           "location": {
-            "value": "[resourceGroup().location]"
+            "value": "[parameters('location')]"
           },
           "images": {
             "value": "[array(parameters('containerImage'))]"
@@ -382,7 +382,7 @@
               "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
               "apiVersion": "2018-11-30",
               "name": "[parameters('managedIdentityName')]",
-              "location": "[resourceGroup().location]"
+              "location": "[parameters('location')]"
             },
             {
               "condition": "[not(empty(parameters('rbacRoleNeeded')))]",
@@ -407,7 +407,7 @@
               "type": "Microsoft.Resources/deploymentScripts",
               "apiVersion": "2020-10-01",
               "name": "[format('ACR-Import-{0}-{1}', parameters('acrName'), last(split(replace(parameters('images')[copyIndex()], ':', ''), '/')))]",
-              "location": "[resourceGroup().location]",
+              "location": "[parameters('location')]",
               "identity": {
                 "type": "UserAssigned",
                 "userAssignedIdentities": {
