@@ -5,10 +5,3 @@ summary: Azure App Environment for Power Backend
 description: Deploys an Azure Container App, Container Registry
 runner: ARM
 templatePath: azuredeploy.json
-
-parameters:
-  - id: name
-    name: Name
-    description: 'Name of the Environment App.'
-    type: string
-    required: true
