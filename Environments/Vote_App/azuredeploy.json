@@ -11,21 +11,21 @@
   "parameters": {
     "containerAppName": {
       "type": "string",
-      "defaultValue": "[format('containerapp-{0}', uniqueString(resourceGroup().id))]",
+      "defaultValue": "test",
       "metadata": {
         "description": "Specifies the name of the container app."
       }
     },
     "containerAppEnvName": {
       "type": "string",
-      "defaultValue": "[format('containerapp-env-{0}', uniqueString(resourceGroup().id))]",
+      "defaultValue": "test1",
       "metadata": {
         "description": "Specifies the name of the container app environment."
       }
     },
     "containerAppLogAnalyticsName": {
       "type": "string",
-      "defaultValue": "[format('containerapp-log-{0}', uniqueString(resourceGroup().id))]",
+      "defaultValue": "test2",
       "metadata": {
         "description": "Specifies the name of the log analytics workspace."
       }
