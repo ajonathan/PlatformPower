@@ -32,12 +32,7 @@
     },
     "location": {
       "type": "string",
-      "allowedValues": [
-        "northcentralusstage",
-        "eastus",
-        "northeurope",
-        "canadacentral"
-      ],
+      "defaultValue": "[resourceGroup().location]",
       "metadata": {
         "description": "Specifies the location for all resources."
       }
