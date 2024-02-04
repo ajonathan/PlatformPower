@@ -8,13 +8,7 @@ param containerAppEnvName string = 'containerapp-env-${uniqueString(resourceGrou
 param containerAppLogAnalyticsName string = 'containerapp-log-${uniqueString(resourceGroup().id)}'
 
 @description('Specifies the location for all resources.')
-@allowed([
-  'northcentralusstage'
-  'eastus'
-  'northeurope'
-  'canadacentral'
-])
-param location string
+param location string = resourceGroup().location
 
 @description('Specifies the docker container image to deploy.')
 param frontendContainerImage string = 'mcr.microsoft.com/azuredocs/azure-vote-front:v1'
