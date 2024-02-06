@@ -11,21 +11,21 @@
   "parameters": {
     "containerAppName": {
       "type": "string",
-      "defaultValue": "test",
+      "defaultValue": "testjoa",
       "metadata": {
         "description": "Specifies the name of the container app."
       }
     },
     "containerAppEnvName": {
       "type": "string",
-      "defaultValue": "test1",
+      "defaultValue": "test1joa",
       "metadata": {
         "description": "Specifies the name of the container app environment."
       }
     },
     "containerAppLogAnalyticsName": {
       "type": "string",
-      "defaultValue": "test2",
+      "defaultValue": "test2joa",
       "metadata": {
         "description": "Specifies the name of the log analytics workspace."
       }
