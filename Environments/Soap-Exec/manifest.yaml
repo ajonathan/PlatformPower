@@ -2,7 +2,7 @@
 name: Soap-Exec-Service
 version: 1.0.0
 summary: Azure Function App Environment
-description: Deploys an Azure Function App, Storage Account, and Application Insights
+description: Deploys an Environment for executing SOAP requests
 runner: ARM
 templatePath: azuredeploy.json
 
